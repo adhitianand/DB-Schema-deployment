@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- 1) Deploy tables -->
+    <changeSet id="1-create-tables" author="Anand">
+        <sqlFile path="tables/table_department.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="tables/table_employee.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <!-- 2) Deploy function -->
+    <changeSet id="2-create-functions" author="Anand">
+        <sqlFile path="functions/fn_calculate_salary.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <!-- 3) Deploy procedure -->
+    <changeSet id="3-create-procedures" author="Anand">
+        <sqlFile path="procedures/sp_update_employee.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>
